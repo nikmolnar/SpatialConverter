@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		249633692055CBD400B06C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249633682055CBD400B06C94 /* AppDelegate.swift */; };
+		2496336B2055CBD400B06C94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496336A2055CBD400B06C94 /* ViewController.swift */; };
+		2496336D2055CBD400B06C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2496336C2055CBD400B06C94 /* Assets.xcassets */; };
+		249633702055CBD400B06C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2496336E2055CBD400B06C94 /* Main.storyboard */; };
+		249633832056385000B06C94 /* Drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249633822056385000B06C94 /* Drivers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		249633652055CBD400B06C94 /* SpatialConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		249633682055CBD400B06C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2496336A2055CBD400B06C94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2496336C2055CBD400B06C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2496336F2055CBD400B06C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		249633712055CBD400B06C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		249633722055CBD500B06C94 /* SpatialConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpatialConverter.entitlements; sourceTree = "<group>"; };
+		2496337F2055DF4800B06C94 /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.map; path = ../../../projects/SpatialConverter/gdal/module.map; sourceTree = "<group>"; };
+		249633822056385000B06C94 /* Drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Drivers.swift; path = ../../../projects/SpatialConverter/SpatialConverter/Drivers.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		249633622055CBD400B06C94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2496335C2055CBD400B06C94 = {
+			isa = PBXGroup;
+			children = (
+				2496337D2055DEC500B06C94 /* GDAL */,
+				249633672055CBD400B06C94 /* SpatialConverter */,
+				249633662055CBD400B06C94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		249633662055CBD400B06C94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				249633652055CBD400B06C94 /* SpatialConverter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		249633672055CBD400B06C94 /* SpatialConverter */ = {
+			isa = PBXGroup;
+			children = (
+				249633682055CBD400B06C94 /* AppDelegate.swift */,
+				2496336A2055CBD400B06C94 /* ViewController.swift */,
+				2496336C2055CBD400B06C94 /* Assets.xcassets */,
+				2496336E2055CBD400B06C94 /* Main.storyboard */,
+				249633712055CBD400B06C94 /* Info.plist */,
+				249633722055CBD500B06C94 /* SpatialConverter.entitlements */,
+				249633822056385000B06C94 /* Drivers.swift */,
+			);
+			path = SpatialConverter;
+			sourceTree = "<group>";
+		};
+		2496337D2055DEC500B06C94 /* GDAL */ = {
+			isa = PBXGroup;
+			children = (
+				2496337F2055DF4800B06C94 /* module.map */,
+			);
+			path = GDAL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		249633642055CBD400B06C94 /* SpatialConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 249633752055CBD500B06C94 /* Build configuration list for PBXNativeTarget "SpatialConverter" */;
+			buildPhases = (
+				249633612055CBD400B06C94 /* Sources */,
+				249633622055CBD400B06C94 /* Frameworks */,
+				249633632055CBD400B06C94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpatialConverter;
+			productName = SpatialConverter;
+			productReference = 249633652055CBD400B06C94 /* SpatialConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2496335D2055CBD400B06C94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Nik Molnar";
+				TargetAttributes = {
+					249633642055CBD400B06C94 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 249633602055CBD400B06C94 /* Build configuration list for PBXProject "SpatialConverter" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2496335C2055CBD400B06C94;
+			productRefGroup = 249633662055CBD400B06C94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				249633642055CBD400B06C94 /* SpatialConverter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		249633632055CBD400B06C94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2496336D2055CBD400B06C94 /* Assets.xcassets in Resources */,
+				249633702055CBD400B06C94 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		249633612055CBD400B06C94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249633832056385000B06C94 /* Drivers.swift in Sources */,
+				2496336B2055CBD400B06C94 /* ViewController.swift in Sources */,
+				249633692055CBD400B06C94 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2496336E2055CBD400B06C94 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2496336F2055CBD400B06C94 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		249633732055CBD500B06C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		249633742055CBD500B06C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		249633762055CBD500B06C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpatialConverter/SpatialConverter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				INFOPLIST_FILE = SpatialConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/GDAL",
+					/usr/local/lib,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikmolnar.SpatialConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = GDAL;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		249633772055CBD500B06C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpatialConverter/SpatialConverter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				INFOPLIST_FILE = SpatialConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/GDAL",
+					/usr/local/lib,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikmolnar.SpatialConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = GDAL;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		249633602055CBD400B06C94 /* Build configuration list for PBXProject "SpatialConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				249633732055CBD500B06C94 /* Debug */,
+				249633742055CBD500B06C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		249633752055CBD500B06C94 /* Build configuration list for PBXNativeTarget "SpatialConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				249633762055CBD500B06C94 /* Debug */,
+				249633772055CBD500B06C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2496335D2055CBD400B06C94 /* Project object */;
+}

@@ -12,6 +12,7 @@
 		2496336D2055CBD400B06C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2496336C2055CBD400B06C94 /* Assets.xcassets */; };
 		249633702055CBD400B06C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2496336E2055CBD400B06C94 /* Main.storyboard */; };
 		249633832056385000B06C94 /* Drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249633822056385000B06C94 /* Drivers.swift */; };
+		24ED3B69205B8DDA0081DFDA /* FileDragDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED3B68205B8DDA0081DFDA /* FileDragDestinationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		249633722055CBD500B06C94 /* SpatialConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpatialConverter.entitlements; sourceTree = "<group>"; };
 		2496337F2055DF4800B06C94 /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.map; path = ../../../projects/SpatialConverter/gdal/module.map; sourceTree = "<group>"; };
 		249633822056385000B06C94 /* Drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Drivers.swift; path = ../../../projects/SpatialConverter/SpatialConverter/Drivers.swift; sourceTree = "<group>"; };
+		24ED3B68205B8DDA0081DFDA /* FileDragDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDragDestinationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				249633712055CBD400B06C94 /* Info.plist */,
 				249633722055CBD500B06C94 /* SpatialConverter.entitlements */,
 				249633822056385000B06C94 /* Drivers.swift */,
+				24ED3B68205B8DDA0081DFDA /* FileDragDestinationView.swift */,
 			);
 			path = SpatialConverter;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24ED3B69205B8DDA0081DFDA /* FileDragDestinationView.swift in Sources */,
 				249633832056385000B06C94 /* Drivers.swift in Sources */,
 				2496336B2055CBD400B06C94 /* ViewController.swift in Sources */,
 				249633692055CBD400B06C94 /* AppDelegate.swift in Sources */,

@@ -163,14 +163,11 @@
                             <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-iT-wx3">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="251"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <connections>
-                                    <segue destination="YEl-QV-nHB" kind="embed" id="8SV-8i-Sr6"/>
-                                </connections>
                             </containerView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="containerView" destination="bg6-iT-wx3" id="uvm-wX-VBw"/>
+                        <outlet property="containerView" destination="bg6-iT-wx3" id="d4Q-WE-DOw"/>
                         <outlet property="dataPopup" destination="1VR-uk-1nR" id="CP5-Kp-Ve1"/>
                     </connections>
                 </viewController>
@@ -181,7 +178,7 @@
         <!--View Controller-->
         <scene sceneID="KDK-Zy-aGx">
             <objects>
-                <viewController id="YEl-QV-nHB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fileDestinationController" id="YEl-QV-nHB" sceneMemberID="viewController">
                     <view key="view" id="Xjk-OU-5uq" customClass="FileDragDestinationView" customModule="SpatialConverter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="251"/>
                         <autoresizingMask key="autoresizingMask"/>

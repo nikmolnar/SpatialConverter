@@ -3,31 +3,24 @@ import GDAL
 
 class ViewController: NSViewController {
     @IBOutlet weak var dataPopup: NSPopUpButton!
+    @IBOutlet weak var containerView: NSView!
     
-    var drivers: [Driver] = []
+    var fileDestinationController: NSViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(String(cString:GDALVersionInfo("GDAL_RELEASE_NAME")))
+        GDAL.Init()
+        print(GDAL.version)
         
-        loadGDALDrivers()
+        fileDestinationController = storyboard!.instantiateController(
+            withIdentifier: NSStoryboard.SceneIdentifier("fileDestinationController")
+        ) as? NSViewController
+        addChildViewController(fileDestinationController!)
         
-//        guard let storyboard = self.storyboard else {
-//            return
-//        }
-//
-//        if let subViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("dropView"))
-//            as? NSViewController
-//        {
-//            self.view = subViewController.view
-//        }
-    }
-    
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
+        let dragView = fileDestinationController!.view as! FileDragDestinationView
+        containerView.addSubview(dragView)
+        dragView.delegate = self
     }
     
     @IBAction func openMenuItemSelected(_ sender: Any) {
@@ -46,40 +39,15 @@ class ViewController: NSViewController {
         }
     }
     
-    func loadGDALDrivers() {
-        OGRRegisterAll()
-        var driverCount: Int32 = OGRGetDriverCount()
-        
-        for i in 0..<driverCount {
-            guard let driver = OGRGetDriver(Int32(i)) else {
-                continue
-            }
-            let driverName = String(cString:OGR_Dr_GetName(driver))
-            drivers.append(Driver(label: driverName, driver: .ogr(driver)))
-        }
-        
-        GDALAllRegister()
-        driverCount = GDALGetDriverCount()
-        
-        for i in 0..<driverCount {
-            guard let driver = GDALGetDriver(Int32(i)) else {
-                continue
-            }
-            let driverName = String(cString:GDALGetDriverShortName(driver))
-            drivers.append(Driver(label: driverName, driver: .gdal(driver)))
-        }
-    }
-    
     func loadDatasetFromFile(_ url: URL) {
         var driver: Driver? = nil
         
         if let gdalDriver = GDALIdentifyDriverEx(url.path, 0, nil, nil) {
-            let driverName = String(cString: GDALGetDriverShortName(gdalDriver))
-            driver = Driver(label: driverName, driver: .gdal(gdalDriver))
+            driver = Driver(driverH: gdalDriver)
         }
         
         if let driver = driver {
-            print(driver.label)
+            print(driver.shortName)
         }
     }
     
@@ -96,6 +64,12 @@ class ViewController: NSViewController {
             }
         }
         
+    }
+}
+
+extension ViewController: FileDragDestinationDelegate {
+    func didReceiveDrag(_ url: URL) {
+        loadDatasetFromFile(url)
     }
 }
 

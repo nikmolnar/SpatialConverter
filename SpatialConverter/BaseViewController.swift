@@ -1,7 +1,7 @@
 import Cocoa
 import GDAL
 
-class ViewController: NSViewController {
+class BaseViewController: NSViewController {
     @IBOutlet weak var dataPopup: NSPopUpButton!
     @IBOutlet weak var containerView: NSView!
     
@@ -12,6 +12,12 @@ class ViewController: NSViewController {
         
         GDAL.Init()
         print(GDAL.version)
+        
+        if let driver = Driver.getDriver(name: "ESRI Shapefile") {
+            if let metadata = driver.getMetadataItem(name: GDAL_DMD_EXTENSION) {
+                print(metadata)
+            }
+        }
         
         fileDestinationController = storyboard!.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier("fileDestinationController")
@@ -67,7 +73,7 @@ class ViewController: NSViewController {
     }
 }
 
-extension ViewController: FileDragDestinationDelegate {
+extension BaseViewController: FileDragDestinationDelegate {
     func didReceiveDrag(_ url: URL) {
         loadDatasetFromFile(url)
     }

@@ -30,6 +30,13 @@ class Driver {
     static let allDrivers: [Driver] = getDrivers()
     static let writeDrivers: [Driver] = allDrivers.filter({driver in !driver.isReadOnly})
     
+    static func getDriver(name: String) -> Driver? {
+        if let driverH: GDALDriverH = GDALGetDriverByName(name) {
+            return Driver(driverH: driverH)
+        }
+        return nil
+    }
+    
     init(driverH: GDALDriverH) {
         self.driverH = driverH
         self.shortName = String(cString:GDALGetDriverShortName(driverH))
@@ -46,5 +53,14 @@ class Driver {
         
         self.driverType = isRaster ? .RASTER : .VECTOR
         self.isReadOnly = isReadOnly
+    }
+    
+    func getMetadataItem(name: String) -> String? {
+        if let metadata = GDALGetMetadataItem(driverH, name, nil) {
+            return String(cString: metadata)
+        }
+        else {
+            return nil
+        }
     }
 }

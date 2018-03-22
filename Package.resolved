@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PerfectPostgreSQL",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-PostgreSQL.git",
+        "state": {
+          "branch": null,
+          "revision": "8db9a797d1f0c0228a2fbeb7df179ee5235ea6bf",
+          "version": "3.0.6"
+        }
+      },
+      {
+        "package": "libpq",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-libpq.git",
+        "state": {
+          "branch": null,
+          "revision": "8b8ff3ceff9af35d9fa4da1f3a93e77dabfcc095",
+          "version": "2.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

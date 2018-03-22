@@ -11,6 +11,7 @@
 		2433FB35205CF15400583C21 /* GDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433FB34205CF15400583C21 /* GDAL.swift */; };
 		2433FB37205CF1D200583C21 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433FB36205CF1D200583C21 /* Driver.swift */; };
 		2433FB39205CF1DD00583C21 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433FB38205CF1DD00583C21 /* Dataset.swift */; };
+		245684C8206354F9006AB5DD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 245684C7206354F9006AB5DD /* .gitignore */; };
 		249633692055CBD400B06C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249633682055CBD400B06C94 /* AppDelegate.swift */; };
 		2496336D2055CBD400B06C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2496336C2055CBD400B06C94 /* Assets.xcassets */; };
 		249633702055CBD400B06C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2496336E2055CBD400B06C94 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		2433FB34205CF15400583C21 /* GDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDAL.swift; sourceTree = "<group>"; };
 		2433FB36205CF1D200583C21 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		2433FB38205CF1DD00583C21 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		245684C7206354F9006AB5DD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		249633652055CBD400B06C94 /* SpatialConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249633682055CBD400B06C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2496336C2055CBD400B06C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		2496335C2055CBD400B06C94 = {
 			isa = PBXGroup;
 			children = (
+				245684C7206354F9006AB5DD /* .gitignore */,
 				2496337D2055DEC500B06C94 /* GDAL */,
 				249633672055CBD400B06C94 /* SpatialConverter */,
 				249633662055CBD400B06C94 /* Products */,
@@ -167,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245684C8206354F9006AB5DD /* .gitignore in Resources */,
 				2496336D2055CBD400B06C94 /* Assets.xcassets in Resources */,
 				249633702055CBD400B06C94 /* Main.storyboard in Resources */,
 				24C5DDDE205EB2E0002B2276 /* DatabaseConnections.storyboard in Resources */,

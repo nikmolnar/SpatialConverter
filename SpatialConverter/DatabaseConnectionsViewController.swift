@@ -4,6 +4,7 @@ class DatabaseConnectionsViewController: NSViewController {
     @IBOutlet var connectionsArrayController: NSArrayController!
     @objc dynamic var connections: NSArray = []
     var connectionPropertiesViewController: ConnectionPropertiesViewController?
+    var selectedObject: DatabaseConnection?
     
     override func viewDidLoad() {
         connectionsArrayController.addObject(DatabaseConnection(name: "Test", username: "Foo", database: "Bar"))
@@ -20,8 +21,9 @@ class DatabaseConnectionsViewController: NSViewController {
     
     @IBAction func handleDoubleClick(_ sender: NSTableView) {
         if !connectionsArrayController.selectedObjects.isEmpty {
-            let selectedObject = connectionsArrayController.selectedObjects[0] as! DatabaseConnection
-            print(selectedObject.name)
+            selectedObject = connectionsArrayController.selectedObjects[0] as? DatabaseConnection
+            presentViewControllerAsSheet(connectionPropertiesViewController!)
+            connectionPropertiesViewController?.connection = selectedObject
         }
     }
     
@@ -29,6 +31,7 @@ class DatabaseConnectionsViewController: NSViewController {
         switch sender.selectedSegment {
         case 0:
             presentViewControllerAsSheet(connectionPropertiesViewController!)
+            selectedObject = nil
             connectionPropertiesViewController!.connection = nil
         case 1:
             connectionsArrayController.remove(sender)

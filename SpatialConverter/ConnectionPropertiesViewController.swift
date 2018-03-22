@@ -15,6 +15,7 @@ class ConnectionPropertiesViewController: NSViewController {
     @IBOutlet weak var passwordText: NSTextField!
     @IBOutlet weak var schemaCombo: NSComboBox!
     @IBOutlet weak var databaseCombo: NSComboBox!
+    @IBOutlet weak var okButton: NSButton!
     
     var requiredInputs: [NSControl] {
         return [connectionNameText, hostText, portText, usernameText, schemaCombo, databaseCombo]
@@ -38,6 +39,18 @@ class ConnectionPropertiesViewController: NSViewController {
         passwordText.stringValue = (connection?.password) ?? ""
         schemaCombo.stringValue = (connection?.schema) ?? "public"
         databaseCombo.stringValue = (connection?.database) ?? ""
+        
+        updateButtonState()
+    }
+    
+    private func updateButtonState() {
+        if isFormValid(){
+            okButton.isEnabled = true
+            okButton.highlight(true)
+        }
+        else {
+            okButton.isEnabled = false
+        }
     }
     
     private func isFormValid() -> Bool {
@@ -78,7 +91,7 @@ class ConnectionPropertiesViewController: NSViewController {
 
 extension ConnectionPropertiesViewController: NSTextFieldDelegate {
     override func controlTextDidChange(_ obj: Notification) {
-        print("...")
+        updateButtonState()
     }
 }
 

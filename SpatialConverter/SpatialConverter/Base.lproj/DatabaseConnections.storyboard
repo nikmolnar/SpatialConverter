@@ -167,6 +167,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="V6R-Ke-8vA"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-4L-X2F">
                                 <rect key="frame" x="381" y="172" width="49" height="22"/>
@@ -177,6 +180,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="Ac7-2b-qJP"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Lf-UR-pt6">
                                 <rect key="frame" x="379" y="202" width="30" height="17"/>
@@ -188,7 +194,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yz-By-5Fc">
-                                <rect key="frame" x="20" y="257" width="113" height="17"/>
+                                <rect key="frame" x="20" y="257" width="119" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Connection Name" id="Vr6-pr-A7j">
                                     <font key="font" metaFont="systemBold"/>
@@ -204,6 +210,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="ooU-XE-wBX"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vnx-gd-XYH">
                                 <rect key="frame" x="18" y="147" width="66" height="17"/>
@@ -222,6 +231,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="45y-ns-IN7"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jh-nB-ieF">
                                 <rect key="frame" x="241" y="147" width="63" height="17"/>
@@ -240,6 +252,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="SFN-J0-Z0U"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpI-4G-opU">
                                 <rect key="frame" x="20" y="92" width="53" height="17"/>
@@ -263,6 +278,9 @@
                                         <string>Item 3</string>
                                     </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="pPE-vQ-h3B"/>
+                                </connections>
                             </comboBox>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCn-sJ-t9Y">
                                 <rect key="frame" x="243" y="92" width="62" height="17"/>
@@ -286,6 +304,9 @@
                                         <string>Item 3</string>
                                     </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="Fz9-Me-6dG"/>
+                                </connections>
                             </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ga1-ni-wDA">
                                 <rect key="frame" x="367" y="13" width="57" height="32"/>
@@ -321,6 +342,7 @@ Gw
                         <outlet property="connectionNameText" destination="vpx-gk-rnr" id="UcS-Ou-y3K"/>
                         <outlet property="databaseCombo" destination="6lo-Gv-DX9" id="QD9-FE-OdG"/>
                         <outlet property="hostText" destination="1hF-cR-tlb" id="C3C-et-Wv6"/>
+                        <outlet property="okButton" destination="ga1-ni-wDA" id="zbU-MA-Sb0"/>
                         <outlet property="passwordText" destination="vTg-8w-W0Y" id="gaz-0d-VhA"/>
                         <outlet property="portText" destination="Tsz-4L-X2F" id="4Ed-l5-3qh"/>
                         <outlet property="schemaCombo" destination="glP-OB-EEm" id="gb7-V4-NDP"/>

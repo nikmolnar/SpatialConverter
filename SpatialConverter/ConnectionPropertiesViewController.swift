@@ -7,9 +7,8 @@ protocol ConnectionPropertiesDelegate {
 class ConnectionPropertiesViewController: NSViewController {
     var delegate: ConnectionPropertiesDelegate?
     var _connection: DatabaseConnection?
-    var schemas: [String] = []
-    var databases: [String] = []
     var currentConnectionParams: (String, Int, String, String)? = nil
+    let opQueue = OperationQueue()
     
     @IBOutlet weak var connectionNameText: NSTextField!
     @IBOutlet weak var hostText: NSTextField!
@@ -31,8 +30,8 @@ class ConnectionPropertiesViewController: NSViewController {
         set(connection) {
             self._connection = connection?.copy() as? DatabaseConnection
             updateForm()
-            schemas = []
-            databases = []
+            schemaCombo.removeAllItems()
+            databaseCombo.removeAllItems()
         }
     }
     
@@ -76,6 +75,60 @@ class ConnectionPropertiesViewController: NSViewController {
         return true
     }
     
+    private func refreshDatabaseInfo() {
+        let connectionParams = (
+            host: hostText.stringValue,
+            port: (portText.objectValue as? Int) ?? 5432,
+            username: usernameText.stringValue,
+            password: passwordText.stringValue
+        )
+        if currentConnectionParams != nil && currentConnectionParams! == connectionParams {
+            return
+        }
+        
+        currentConnectionParams = connectionParams
+        
+        opQueue.addOperation() {
+            let conn = PGConnection()
+            let status = conn.connectdb(
+                "postgresql://\(connectionParams.username):\(connectionParams.password)@\(connectionParams.host):" +
+                    "\(connectionParams.port)"
+            )
+            if status == .bad {
+                print(conn.errorMessage())
+                return
+            }
+                
+            var schemas: [String] = []
+            var result = conn.exec(statement: "SELECT schema_name FROM information_schema.schemata")
+            for i in 0..<result.numTuples() {
+                if let schema = result.getFieldString(tupleIndex: i, fieldIndex: 0) {
+                    schemas.append(schema)
+                }
+            }
+            
+            var databases: [String] = []
+            result = conn.exec(statement: "SELECT datname FROM pg_database WHERE datistemplate = false")
+            for i in 0..<result.numTuples() {
+                if let database = result.getFieldString(tupleIndex: i, fieldIndex: 0) {
+                    databases.append(database)
+                }
+            }
+            
+            if self.currentConnectionParams != nil && self.currentConnectionParams! == connectionParams {
+                DispatchQueue.main.async() {
+                    self.schemaCombo.removeAllItems()
+                    self.schemaCombo.addItems(withObjectValues: schemas.sorted())
+                    
+                    self.databaseCombo.removeAllItems()
+                    self.databaseCombo.addItems(withObjectValues: databases.sorted())
+                }
+            }
+            
+            conn.close()
+        }
+    }
+    
     override func viewDidLoad() {
         for control in
             [connectionNameText, hostText, portText, usernameText, passwordText, schemaCombo, databaseCombo]
@@ -108,7 +161,9 @@ extension ConnectionPropertiesViewController: NSTextFieldDelegate {
     }
     
     override func controlTextDidEndEditing(_ obj: Notification) {
-        print("...")
+        if canConnect() {
+            refreshDatabaseInfo()
+        }
     }
 }
 

@@ -167,9 +167,6 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="V6R-Ke-8vA"/>
-                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-4L-X2F">
                                 <rect key="frame" x="381" y="172" width="49" height="22"/>
@@ -180,9 +177,6 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="Ac7-2b-qJP"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Lf-UR-pt6">
                                 <rect key="frame" x="379" y="202" width="30" height="17"/>
@@ -210,9 +204,6 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="ooU-XE-wBX"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vnx-gd-XYH">
                                 <rect key="frame" x="18" y="147" width="66" height="17"/>
@@ -231,9 +222,6 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="45y-ns-IN7"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jh-nB-ieF">
                                 <rect key="frame" x="241" y="147" width="63" height="17"/>
@@ -252,9 +240,6 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="SFN-J0-Z0U"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpI-4G-opU">
                                 <rect key="frame" x="20" y="92" width="53" height="17"/>
@@ -278,9 +263,6 @@
                                         <string>Item 3</string>
                                     </objectValues>
                                 </comboBoxCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="pPE-vQ-h3B"/>
-                                </connections>
                             </comboBox>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCn-sJ-t9Y">
                                 <rect key="frame" x="243" y="92" width="62" height="17"/>
@@ -304,9 +286,6 @@
                                         <string>Item 3</string>
                                     </objectValues>
                                 </comboBoxCell>
-                                <connections>
-                                    <action selector="handleOk:" target="aAB-Cy-Luh" id="Fz9-Me-6dG"/>
-                                </connections>
                             </comboBox>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ga1-ni-wDA">
                                 <rect key="frame" x="367" y="13" width="57" height="32"/>
@@ -323,7 +302,7 @@ DQ
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zap-gG-8te">
-                                <rect key="frame" x="286" y="13" width="82" height="32"/>
+                                <rect key="frame" x="14" y="13" width="82" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M3M-DF-mRj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -335,6 +314,14 @@ Gw
                                 <connections>
                                     <action selector="handleCancel:" target="aAB-Cy-Luh" id="Smv-Mc-Xy5"/>
                                 </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e9-AT-Pav">
+                                <rect key="frame" x="294" y="13" width="66" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kf1-Lt-iGF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
                             </button>
                         </subviews>
                     </view>

@@ -7,6 +7,9 @@ protocol ConnectionPropertiesDelegate {
 class ConnectionPropertiesViewController: NSViewController {
     var delegate: ConnectionPropertiesDelegate?
     var _connection: DatabaseConnection?
+    var schemas: [String] = []
+    var databases: [String] = []
+    var currentConnectionParams: (String, Int, String, String)? = nil
     
     @IBOutlet weak var connectionNameText: NSTextField!
     @IBOutlet weak var hostText: NSTextField!
@@ -28,6 +31,8 @@ class ConnectionPropertiesViewController: NSViewController {
         set(connection) {
             self._connection = connection?.copy() as? DatabaseConnection
             updateForm()
+            schemas = []
+            databases = []
         }
     }
     
@@ -62,13 +67,21 @@ class ConnectionPropertiesViewController: NSViewController {
         return true
     }
     
+    private func canConnect() -> Bool {
+        for input in [hostText, portText, usernameText, passwordText] {
+            if input!.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                return false
+            }
+        }
+        return true
+    }
+    
     override func viewDidLoad() {
         for control in
             [connectionNameText, hostText, portText, usernameText, passwordText, schemaCombo, databaseCombo]
         {
             control!.delegate = self
         }
-        
     }
     
     @IBAction func handleCancel(_ sender: Any) {
@@ -92,6 +105,10 @@ class ConnectionPropertiesViewController: NSViewController {
 extension ConnectionPropertiesViewController: NSTextFieldDelegate {
     override func controlTextDidChange(_ obj: Notification) {
         updateButtonState()
+    }
+    
+    override func controlTextDidEndEditing(_ obj: Notification) {
+        print("...")
     }
 }
 

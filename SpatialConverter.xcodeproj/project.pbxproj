@@ -7,19 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24FF34F0206402B8004ADF10 /* DatabaseConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EA206402B7004ADF10 /* DatabaseConnectionsViewController.swift */; };
+		240C18B520649BBE00349F76 /* PerfectPostgreSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C18B420649BBE00349F76 /* PerfectPostgreSQL.swift */; };
 		24FF34F1206402B8004ADF10 /* DatabaseConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EA206402B7004ADF10 /* DatabaseConnectionsViewController.swift */; };
-		24FF34F2206402B8004ADF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EB206402B7004ADF10 /* AppDelegate.swift */; };
 		24FF34F3206402B8004ADF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EB206402B7004ADF10 /* AppDelegate.swift */; };
-		24FF34F4206402B8004ADF10 /* FileDragDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EC206402B8004ADF10 /* FileDragDestinationView.swift */; };
 		24FF34F5206402B8004ADF10 /* FileDragDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EC206402B8004ADF10 /* FileDragDestinationView.swift */; };
-		24FF34F6206402B8004ADF10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34ED206402B8004ADF10 /* Utils.swift */; };
 		24FF34F7206402B8004ADF10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34ED206402B8004ADF10 /* Utils.swift */; };
-		24FF34F8206402B8004ADF10 /* ConnectionPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EE206402B8004ADF10 /* ConnectionPropertiesViewController.swift */; };
 		24FF34F9206402B8004ADF10 /* ConnectionPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EE206402B8004ADF10 /* ConnectionPropertiesViewController.swift */; };
-		24FF34FA206402B8004ADF10 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EF206402B8004ADF10 /* BaseViewController.swift */; };
 		24FF34FB206402B8004ADF10 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EF206402B8004ADF10 /* BaseViewController.swift */; };
-		24FF3504206404F3004ADF10 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF3503206404F3004ADF10 /* DatabaseConnection.swift */; };
 		24FF3505206404F3004ADF10 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF3503206404F3004ADF10 /* DatabaseConnection.swift */; };
 		24FF350720640515004ADF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FF350620640515004ADF10 /* Main.storyboard */; };
 		24FF350A20640527004ADF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FF350920640527004ADF10 /* Assets.xcassets */; };
@@ -28,10 +22,10 @@
 		24FF35132064060C004ADF10 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF35102064060C004ADF10 /* Driver.swift */; };
 		24FF35142064060C004ADF10 /* GDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF35112064060C004ADF10 /* GDAL.swift */; };
 		24FF351620640867004ADF10 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24FF351520640867004ADF10 /* Info.plist */; };
-		OBJ_18 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240C18B420649BBE00349F76 /* PerfectPostgreSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerfectPostgreSQL.swift; path = ".build/checkouts/Perfect-PostgreSQL.git--5405562302171386633/Sources/PerfectPostgreSQL.swift"; sourceTree = "<group>"; };
 		24FF34DA2064028A004ADF10 /* SpatialConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FF34EA206402B7004ADF10 /* DatabaseConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnectionsViewController.swift; sourceTree = "<group>"; };
 		24FF34EB206402B7004ADF10 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,17 +46,23 @@
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		24FF34D72064028A004ADF10 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
+		240C18AF20649ADD00349F76 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				240C18B220649B8700349F76 /* Perfect-PostgreSQL */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		240C18B220649B8700349F76 /* Perfect-PostgreSQL */ = {
+			isa = PBXGroup;
+			children = (
+				240C18B420649BBE00349F76 /* PerfectPostgreSQL.swift */,
+			);
+			name = "Perfect-PostgreSQL";
+			sourceTree = "<group>";
+		};
 		24FF3502206404DD004ADF10 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +83,13 @@
 			path = GDAL;
 			sourceTree = "<group>";
 		};
+		24FF35182064126E004ADF10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		OBJ_11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,14 +98,15 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				240C18AF20649ADD00349F76 /* Dependencies */,
 				24FF3502206404DD004ADF10 /* Sources */,
 				OBJ_6 /* Package.swift */,
 				OBJ_11 /* Products */,
+				24FF35182064126E004ADF10 /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_8 /* SpatialConverter */ = {
@@ -128,7 +136,6 @@
 			buildConfigurationList = 24FF34E72064028B004ADF10 /* Build configuration list for PBXNativeTarget "SpatialConverter" */;
 			buildPhases = (
 				24FF34D62064028A004ADF10 /* Sources */,
-				24FF34D72064028A004ADF10 /* Frameworks */,
 				24FF34D82064028A004ADF10 /* Resources */,
 			);
 			buildRules = (
@@ -139,20 +146,6 @@
 			productName = SpatialConverter;
 			productReference = 24FF34DA2064028A004ADF10 /* SpatialConverter.app */;
 			productType = "com.apple.product-type.application";
-		};
-		"SpatialConverter::SwiftPMPackageDescription" /* SpatialConverterPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_14 /* Build configuration list for PBXNativeTarget "SpatialConverterPackageDescription" */;
-			buildPhases = (
-				OBJ_17 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SpatialConverterPackageDescription;
-			productName = SpatialConverterPackageDescription;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -177,12 +170,11 @@
 				en,
 				Base,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"SpatialConverter::SwiftPMPackageDescription" /* SpatialConverterPackageDescription */,
 				24FF34D92064028A004ADF10 /* SpatialConverter */,
 			);
 		};
@@ -210,6 +202,7 @@
 				24FF34F7206402B8004ADF10 /* Utils.swift in Sources */,
 				24FF3505206404F3004ADF10 /* DatabaseConnection.swift in Sources */,
 				24FF34F3206402B8004ADF10 /* AppDelegate.swift in Sources */,
+				240C18B520649BBE00349F76 /* PerfectPostgreSQL.swift in Sources */,
 				24FF35142064060C004ADF10 /* GDAL.swift in Sources */,
 				24FF34F9206402B8004ADF10 /* ConnectionPropertiesViewController.swift in Sources */,
 				24FF34F1206402B8004ADF10 /* DatabaseConnectionsViewController.swift in Sources */,
@@ -217,21 +210,6 @@
 				24FF35132064060C004ADF10 /* Driver.swift in Sources */,
 				24FF35122064060C004ADF10 /* Dataset.swift in Sources */,
 				24FF34F5206402B8004ADF10 /* FileDragDestinationView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_17 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				24FF3504206404F3004ADF10 /* DatabaseConnection.swift in Sources */,
-				24FF34F6206402B8004ADF10 /* Utils.swift in Sources */,
-				24FF34F2206402B8004ADF10 /* AppDelegate.swift in Sources */,
-				OBJ_18 /* Package.swift in Sources */,
-				24FF34F8206402B8004ADF10 /* ConnectionPropertiesViewController.swift in Sources */,
-				24FF34F0206402B8004ADF10 /* DatabaseConnectionsViewController.swift in Sources */,
-				24FF34FA206402B8004ADF10 /* BaseViewController.swift in Sources */,
-				24FF34F4206402B8004ADF10 /* FileDragDestinationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +277,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikmolnar.SpatialConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/GDAL";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/GDAL $(PROJECT_DIR)/.build/checkouts/**";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -360,25 +338,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikmolnar.SpatialConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/GDAL";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		OBJ_15 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Library/Developer/CommandLineTools/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_16 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Library/Developer/CommandLineTools/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/GDAL $(PROJECT_DIR)/.build/checkouts/**";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -433,15 +393,6 @@
 			buildConfigurations = (
 				24FF34E82064028B004ADF10 /* Debug */,
 				24FF34E92064028B004ADF10 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		OBJ_14 /* Build configuration list for PBXNativeTarget "SpatialConverterPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_15 /* Debug */,
-				OBJ_16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

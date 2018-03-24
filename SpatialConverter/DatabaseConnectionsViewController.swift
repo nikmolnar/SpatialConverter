@@ -13,6 +13,7 @@ class DatabaseConnectionsViewController: NSViewController {
         connectionPropertiesViewController = storyboard!.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier("connectionPropertiesSheet")
         ) as? ConnectionPropertiesViewController
+        connectionPropertiesViewController?.delegate = self
     }
     
     private func saveConnections() {
@@ -38,6 +39,23 @@ class DatabaseConnectionsViewController: NSViewController {
             saveConnections()
         default:
             break
+        }
+    }
+}
+
+extension DatabaseConnectionsViewController: ConnectionPropertiesDelegate {
+    func didUpdateProperties(_ connection: DatabaseConnection) {
+        if selectedObject == nil {
+            connectionsArrayController.addObject(connection)
+        }
+        else {
+            selectedObject!.name = connection.name
+            selectedObject!.host = connection.host
+            selectedObject!.port = connection.port
+            selectedObject!.username = connection.username
+            selectedObject!.password = connection.password
+            selectedObject!.schema = connection.schema
+            selectedObject!.database = connection.database
         }
     }
 }

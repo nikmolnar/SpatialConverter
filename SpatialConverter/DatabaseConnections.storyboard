@@ -253,7 +253,7 @@
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glP-OB-EEm">
                                 <rect key="frame" x="21" y="57" width="200" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Uq3-Wj-Zlk">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="Uq3-Wj-Zlk">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -276,7 +276,7 @@
                             <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-Gv-DX9">
                                 <rect key="frame" x="244" y="57" width="189" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="amE-tI-Fyn">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="amE-tI-Fyn">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -318,10 +318,13 @@ Gw
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e9-AT-Pav">
                                 <rect key="frame" x="294" y="13" width="66" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kf1-Lt-iGF">
+                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kf1-Lt-iGF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="handleTest:" target="aAB-Cy-Luh" id="kmH-HE-h2m"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -333,6 +336,7 @@ Gw
                         <outlet property="passwordText" destination="vTg-8w-W0Y" id="gaz-0d-VhA"/>
                         <outlet property="portText" destination="Tsz-4L-X2F" id="4Ed-l5-3qh"/>
                         <outlet property="schemaCombo" destination="glP-OB-EEm" id="gb7-V4-NDP"/>
+                        <outlet property="testButton" destination="7e9-AT-Pav" id="emw-Jl-dAE"/>
                         <outlet property="usernameText" destination="nl6-Zb-Y5q" id="FQj-7c-sYn"/>
                     </connections>
                 </viewController>

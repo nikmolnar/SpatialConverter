@@ -4,12 +4,7 @@ protocol ConnectionPropertiesDelegate {
     func didUpdateProperties(_ connection: DatabaseConnection)
 }
 
-class ConnectionPropertiesViewController: NSViewController {
-    var delegate: ConnectionPropertiesDelegate?
-    var _connection: DatabaseConnection?
-    var currentConnectionParams: (String, Int, String, String)? = nil
-    let opQueue = OperationQueue()
-    
+@objc class ConnectionPropertiesViewController: NSViewController {
     @IBOutlet weak var connectionNameText: NSTextField!
     @IBOutlet weak var hostText: NSTextField!
     @IBOutlet weak var portText: NSTextField!
@@ -17,11 +12,16 @@ class ConnectionPropertiesViewController: NSViewController {
     @IBOutlet weak var passwordText: NSTextField!
     @IBOutlet weak var schemaCombo: NSComboBox!
     @IBOutlet weak var databaseCombo: NSComboBox!
+    @IBOutlet weak var testButton: NSButton!
     @IBOutlet weak var okButton: NSButton!
     
-    var requiredInputs: [NSControl] {
-        return [connectionNameText, hostText, portText, usernameText, schemaCombo, databaseCombo]
-    }
+    private var context = 0
+    
+    var delegate: ConnectionPropertiesDelegate?
+    var _connection: DatabaseConnection?
+    var currentConnectionParams: (String, Int, String, String)? = nil
+    let opQueue = OperationQueue()
+    @objc dynamic var isTestingConnection = false
     
     var connection: DatabaseConnection? {
         get {
@@ -32,6 +32,84 @@ class ConnectionPropertiesViewController: NSViewController {
             updateForm()
             schemaCombo.removeAllItems()
             databaseCombo.removeAllItems()
+        }
+    }
+    
+    override func viewDidLoad() {
+        for control in
+            [connectionNameText, hostText, portText, usernameText, passwordText, schemaCombo, databaseCombo]
+        {
+            control!.delegate = self
+        }
+        
+        self.addObserver(self, forKeyPath: #keyPath(isTestingConnection), options: [.new, .old], context: &context)
+    }
+    
+    deinit {
+        removeObserver(self, forKeyPath: "isTestingConnection")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == &self.context {
+            updateButtonState()
+        }
+        else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+    
+    @IBAction func handleCancel(_ sender: Any) {
+        dismissViewController(self)
+    }
+    
+    @IBAction func handleTest(_ sender: Any) {
+        isTestingConnection = true
+        
+        let connectionParams = (
+            host: hostText.stringValue,
+            port: (portText.objectValue as? Int) ?? 5432,
+            username: usernameText.stringValue,
+            password: passwordText.stringValue,
+            schema: schemaCombo.stringValue,
+            database: databaseCombo.stringValue
+        )
+        
+        opQueue.addOperation() {
+            let conn = PGConnection()
+            let status = conn.connectdb(
+                "postgresql://\(connectionParams.username):\(connectionParams.password)@\(connectionParams.host):" +
+                "\(connectionParams.port)/\(connectionParams.database)?connect_timeout=60"
+            )
+            let message = conn.errorMessage()
+            conn.close()
+            
+            DispatchQueue.main.async() {
+                let alert = NSAlert()
+                if status == .ok {
+                    alert.alertStyle = .informational
+                    alert.messageText = "Connection successful"
+                }
+                else {
+                    alert.alertStyle = .warning
+                    alert.messageText = "Error connecting to database: \(message)"
+                }
+                alert.runModal()
+                
+                self.isTestingConnection = false
+            }
+        }
+    }
+    
+    @IBAction func handleOk(_ sender: Any) {
+        if isFormValid() {
+            let newConnection = DatabaseConnection(
+                name: connectionNameText.stringValue, host: hostText.stringValue,
+                port: Int(portText.stringValue) ?? 5432, username: usernameText.stringValue,
+                password: passwordText.stringValue, database: databaseCombo.stringValue,
+                schema: schemaCombo.stringValue
+            )
+            delegate?.didUpdateProperties(newConnection)
+            dismissViewController(self)
         }
     }
     
@@ -51,15 +129,22 @@ class ConnectionPropertiesViewController: NSViewController {
         if isFormValid(){
             okButton.isEnabled = true
             okButton.highlight(true)
+            testButton.isEnabled = true
         }
         else {
             okButton.isEnabled = false
+            testButton.isEnabled = false
         }
+        testButton.isEnabled = isFormValid() && !isTestingConnection ? true : false
     }
     
     private func isFormValid() -> Bool {
+        let requiredInputs = [
+            connectionNameText, hostText, portText, usernameText, schemaCombo, databaseCombo
+        ]
+        
         for input in requiredInputs {
-            if input.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            if input!.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 return false
             }
         }
@@ -128,31 +213,6 @@ class ConnectionPropertiesViewController: NSViewController {
             conn.close()
         }
     }
-    
-    override func viewDidLoad() {
-        for control in
-            [connectionNameText, hostText, portText, usernameText, passwordText, schemaCombo, databaseCombo]
-        {
-            control!.delegate = self
-        }
-    }
-    
-    @IBAction func handleCancel(_ sender: Any) {
-        dismissViewController(self)
-    }
-    
-    @IBAction func handleOk(_ sender: Any) {
-        if isFormValid() {
-            let newConnection = DatabaseConnection(
-                name: connectionNameText.stringValue, host: hostText.stringValue,
-                port: Int(portText.stringValue) ?? 5432, username: usernameText.stringValue,
-                password: passwordText.stringValue, database: databaseCombo.stringValue,
-                schema: schemaCombo.stringValue
-            )
-            delegate?.didUpdateProperties(newConnection)
-            dismissViewController(self)
-        }
-    }
 }
 
 extension ConnectionPropertiesViewController: NSTextFieldDelegate {
@@ -190,6 +250,29 @@ class IntFormatter: Formatter {
         }
         
         obj?.pointee = nil
-        return false
+        return true
     }
 }
+
+//class ComboBoxArrayDataSource: NSObject, NSComboBoxDataSource {
+//    var data: [String] = []
+//
+//    func comboBox(_ comboBox: NSComboBox, completedString string: String) -> String? {
+//        return data.first(where: {x in x.starts(with: string)})
+//    }
+//
+//    func comboBox(_ comboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
+//        if let index = data.index(where: {x in x == string}) {
+//            return index
+//        }
+//        return NSNotFound
+//    }
+//
+//    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
+//        return data[index]
+//    }
+//
+//    func numberOfItems(in comboBox: NSComboBox) -> Int {
+//        return data.count
+//    }
+//}

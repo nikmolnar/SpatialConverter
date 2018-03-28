@@ -1,7 +1,6 @@
 import Foundation
 
-/// Copied from SwiftPrivate module
-/// Compute the prefix sum of `seq`.
+/// Copied from SwiftPrivate module:  Compute the prefix sum of `seq`.
 public func scan<
     S : Sequence, U
     >(_ seq: S, _ initial: U, _ combine: (U, S.Iterator.Element) -> U) -> [U] {
@@ -38,4 +37,10 @@ public func withArrayOfCStrings<R>(
         cStrings[cStrings.count - 1] = nil
         return body(cStrings)
     }
+}
+
+/// Load Info.plist as a dict
+func getInfo() -> NSDictionary {
+    let infoPath = Bundle.main.path(forResource: "Info", ofType: "plist")
+    return NSDictionary(contentsOfFile: infoPath!)!
 }

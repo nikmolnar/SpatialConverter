@@ -6,27 +6,26 @@ class BaseViewController: NSViewController {
     @IBOutlet weak var containerView: NSView!
     
     var fileDestinationController: NSViewController?
+    var convertViewController: ConvertViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GDAL.Init()
         print(GDAL.version)
-        
-        if let driver = Driver.getDriver(name: "ESRI Shapefile") {
-            if let metadata = driver.getMetadataItem(name: GDAL_DMD_EXTENSION) {
-                print(metadata)
-            }
-        }
+        GDAL.Init()
         
         fileDestinationController = storyboard!.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier("fileDestinationController")
         ) as? NSViewController
-        addChildViewController(fileDestinationController!)
+//        addChildViewController(fileDestinationController!)
         
-        let dragView = fileDestinationController!.view as! FileDragDestinationView
-        containerView.addSubview(dragView)
-        dragView.delegate = self
+        convertViewController = storyboard!.instantiateController(
+            withIdentifier: NSStoryboard.SceneIdentifier("convertViewController")
+        ) as? ConvertViewController
+//        addChildViewController(convertViewController!)
+        
+        showFileDestinationView()
+        showFileDestinationView()
     }
     
     @IBAction func openMenuItemSelected(_ sender: Any) {
@@ -45,15 +44,45 @@ class BaseViewController: NSViewController {
         }
     }
     
-    func loadDatasetFromFile(_ url: URL) {
-        var driver: Driver? = nil
+    func showFileDestinationView() {
+        let dragView = fileDestinationController!.view as! FileDragDestinationView
+        dragView.delegate = self
         
-        if let gdalDriver = GDALIdentifyDriverEx(url.path, 0, nil, nil) {
-            driver = Driver(driverH: gdalDriver)
+        if containerView.subviews.isEmpty {
+            containerView.addSubview(dragView)
+        }
+        else if (containerView.subviews.first != dragView) {
+            containerView.replaceSubview(containerView.subviews.first!, with: dragView)
+        }
+    }
+    
+    func showConvertView(with dataset: Dataset) {
+        let dragView = convertViewController!.view as! FileDragDestinationView
+        dragView.delegate = self
+        
+        if containerView.subviews.isEmpty {
+            containerView.addSubview(dragView)
+        }
+        else if (containerView.subviews.first != dragView) {
+            containerView.replaceSubview(containerView.subviews.first!, with: dragView)
         }
         
-        if let driver = driver {
-            print(driver.shortName)
+        convertViewController!.dataset = dataset
+    }
+    
+    func loadDatasetFromFile(_ url: URL) {
+        Dataset.open(url) {
+            datasetOrNil in
+            if let dataset = datasetOrNil {
+                self.showConvertView(with: dataset)
+            }
+            else {
+                let alert = NSAlert()
+                alert.alertStyle = .critical
+                alert.messageText = "Could not open file."
+                alert.informativeText = String(cString:CPLGetLastErrorMsg())
+                alert.runModal()
+            }
         }
     }
     
@@ -69,7 +98,6 @@ class BaseViewController: NSViewController {
                 loadDatasetFromFile(url)
             }
         }
-        
     }
 }
 

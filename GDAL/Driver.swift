@@ -20,7 +20,6 @@ class Driver {
             guard let driver = GDALGetDriver(Int32(i)) else {
                 continue
             }
-            
             drivers.append(Driver(driverH: driver))
         }
         

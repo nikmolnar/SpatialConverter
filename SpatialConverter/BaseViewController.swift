@@ -17,14 +17,13 @@ class BaseViewController: NSViewController {
         fileDestinationController = storyboard!.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier("fileDestinationController")
         ) as? NSViewController
-//        addChildViewController(fileDestinationController!)
+        addChildViewController(fileDestinationController!)
         
         convertViewController = storyboard!.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier("convertViewController")
         ) as? ConvertViewController
-//        addChildViewController(convertViewController!)
+        addChildViewController(convertViewController!)
         
-        showFileDestinationView()
         showFileDestinationView()
     }
     
@@ -54,9 +53,12 @@ class BaseViewController: NSViewController {
         else if (containerView.subviews.first != dragView) {
             containerView.replaceSubview(containerView.subviews.first!, with: dragView)
         }
+        
+        self.containerView.frame = dragView.frame
+        self.view.window?.layoutIfNeeded()
     }
     
-    func showConvertView(with dataset: Dataset) {
+    func showConvertView(with dataset: Dataset?) {
         let dragView = convertViewController!.view as! FileDragDestinationView
         dragView.delegate = self
         
@@ -66,7 +68,16 @@ class BaseViewController: NSViewController {
         else if (containerView.subviews.first != dragView) {
             containerView.replaceSubview(containerView.subviews.first!, with: dragView)
         }
-        
+
+        NSLayoutConstraint(
+            item: containerView, attribute: .height, relatedBy: .equal, toItem: dragView, attribute: .height,
+            multiplier: 1.0, constant: 0.0
+        ).isActive = true
+        NSLayoutConstraint(
+            item: containerView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: dragView, attribute: .width,
+            multiplier: 1.0, constant: 0.0
+        ).isActive = true
+
         convertViewController!.dataset = dataset
     }
     

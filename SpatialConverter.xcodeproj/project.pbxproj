@@ -11,6 +11,8 @@
 		240C18BB2068203700349F76 /* SpatialConverter.icns in Resources */ = {isa = PBXBuildFile; fileRef = 240C18BA2068203700349F76 /* SpatialConverter.icns */; };
 		24BC103420694A9A00D1DC00 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC103320694A9A00D1DC00 /* ConvertViewController.swift */; };
 		24BC1036206B428100D1DC00 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 24BC1035206B428100D1DC00 /* README.md */; };
+		24C0B78F20711A0400301833 /* CollapsibleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0B78E20711A0400301833 /* CollapsibleList.swift */; };
+		24C0B79020712AB000301833 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24FF351520640867004ADF10 /* Info.plist */; };
 		24FF34F1206402B8004ADF10 /* DatabaseConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EA206402B7004ADF10 /* DatabaseConnectionsViewController.swift */; };
 		24FF34F3206402B8004ADF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EB206402B7004ADF10 /* AppDelegate.swift */; };
 		24FF34F5206402B8004ADF10 /* FileDragDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF34EC206402B8004ADF10 /* FileDragDestinationView.swift */; };
@@ -24,7 +26,6 @@
 		24FF35122064060C004ADF10 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF350F2064060C004ADF10 /* Dataset.swift */; };
 		24FF35132064060C004ADF10 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF35102064060C004ADF10 /* Driver.swift */; };
 		24FF35142064060C004ADF10 /* GDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF35112064060C004ADF10 /* GDAL.swift */; };
-		24FF351620640867004ADF10 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24FF351520640867004ADF10 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		240C18BA2068203700349F76 /* SpatialConverter.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = SpatialConverter.icns; path = Resources/SpatialConverter.icns; sourceTree = "<group>"; };
 		24BC103320694A9A00D1DC00 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		24BC1035206B428100D1DC00 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		24C0B78E20711A0400301833 /* CollapsibleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleList.swift; sourceTree = "<group>"; };
 		24FF34DA2064028A004ADF10 /* SpatialConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FF34EA206402B7004ADF10 /* DatabaseConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnectionsViewController.swift; sourceTree = "<group>"; };
 		24FF34EB206402B7004ADF10 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,13 +109,13 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				OBJ_6 /* Package.swift */,
 				24BC1035206B428100D1DC00 /* README.md */,
 				240C18BA2068203700349F76 /* SpatialConverter.icns */,
-				240C18AF20649ADD00349F76 /* Dependencies */,
 				24FF3502206404DD004ADF10 /* Sources */,
-				OBJ_6 /* Package.swift */,
-				OBJ_11 /* Products */,
+				240C18AF20649ADD00349F76 /* Dependencies */,
 				24FF35182064126E004ADF10 /* Frameworks */,
+				OBJ_11 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,18 +123,19 @@
 			isa = PBXGroup;
 			children = (
 				24FF34EB206402B7004ADF10 /* AppDelegate.swift */,
+				24FF350920640527004ADF10 /* Assets.xcassets */,
 				24FF34EF206402B8004ADF10 /* BaseViewController.swift */,
+				24C0B78E20711A0400301833 /* CollapsibleList.swift */,
 				24FF34EE206402B8004ADF10 /* ConnectionPropertiesViewController.swift */,
+				24BC103320694A9A00D1DC00 /* ConvertViewController.swift */,
+				24FF3503206404F3004ADF10 /* DatabaseConnection.swift */,
+				24FF350B2064054A004ADF10 /* DatabaseConnections.storyboard */,
 				24FF34EA206402B7004ADF10 /* DatabaseConnectionsViewController.swift */,
 				24FF34EC206402B8004ADF10 /* FileDragDestinationView.swift */,
-				24FF34ED206402B8004ADF10 /* Utils.swift */,
 				24FF351520640867004ADF10 /* Info.plist */,
-				24FF3503206404F3004ADF10 /* DatabaseConnection.swift */,
 				24FF350620640515004ADF10 /* Main.storyboard */,
 				24FF350820640521004ADF10 /* SpatialConverter.entitlements */,
-				24FF350920640527004ADF10 /* Assets.xcassets */,
-				24FF350B2064054A004ADF10 /* DatabaseConnections.storyboard */,
-				24BC103320694A9A00D1DC00 /* ConvertViewController.swift */,
+				24FF34ED206402B8004ADF10 /* Utils.swift */,
 			);
 			path = SpatialConverter;
 			sourceTree = SOURCE_ROOT;
@@ -195,11 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				24BC1036206B428100D1DC00 /* README.md in Resources */,
-				24FF351620640867004ADF10 /* Info.plist in Resources */,
 				240C18BB2068203700349F76 /* SpatialConverter.icns in Resources */,
 				24FF350A20640527004ADF10 /* Assets.xcassets in Resources */,
 				24FF350720640515004ADF10 /* Main.storyboard in Resources */,
 				24FF350C2064054A004ADF10 /* DatabaseConnections.storyboard in Resources */,
+				24C0B79020712AB000301833 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +215,7 @@
 			files = (
 				24FF34F7206402B8004ADF10 /* Utils.swift in Sources */,
 				24FF3505206404F3004ADF10 /* DatabaseConnection.swift in Sources */,
+				24C0B78F20711A0400301833 /* CollapsibleList.swift in Sources */,
 				24BC103420694A9A00D1DC00 /* ConvertViewController.swift in Sources */,
 				24FF34F3206402B8004ADF10 /* AppDelegate.swift in Sources */,
 				240C18B520649BBE00349F76 /* PerfectPostgreSQL.swift in Sources */,

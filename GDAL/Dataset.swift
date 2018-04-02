@@ -20,9 +20,24 @@ class DatasetFilePresenter: NSObject, NSFilePresenter {
 }
 
 class Dataset {
+    enum DatasetType {
+        case File
+        case Database
+    }
+    
     let driver: Driver
     let datasetH: GDALDatasetH
-    let path: String?
+    var path: String?
+    var database: DatabaseConnection?
+    
+    var type: DatasetType {
+        if path != nil {
+            return .File
+        }
+        else {
+            return .Database
+        }
+    }
     
     /**
         Register related file extensions and execute a block within an NSFileCoordinator context

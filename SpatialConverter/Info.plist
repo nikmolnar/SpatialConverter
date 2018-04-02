@@ -51,50 +51,50 @@
 				<string>cpg</string>
 			</array>
 		</dict>
-        <dict>
-            <key>CFBundleTypeName</key>
-            <string>Aeronav FAA</string>
-            <key>NSIsRelatedItemType</key>
-            <true/>
-            <key>LSHandlerRank</key>
-            <string>None</string>
-            <key>CFBundleTypeRole</key>
-            <string>None</string>
-            <key>CFBundleTypeExtensions</key>
-            <array>
-                <string>dat</string>
-            </array>
-        </dict>
-        <dict>
-            <key>CFBundleTypeName</key>
-            <string>Aeronav FAA</string>
-            <key>NSIsRelatedItemType</key>
-            <false/>
-            <key>LSHandlerRank</key>
-            <string>None</string>
-            <key>CFBundleTypeRole</key>
-            <string>None</string>
-            <key>CFBundleTypeExtensions</key>
-            <array>
-                <string>dat</string>
-            </array>
-        </dict>
-        <dict>
-            <key>CFBundleTypeName</key>
-            <string>GeoDatabase</string>
-            <key>NSIsRelatedItemType</key>
-            <false/>
-            <key>LSHandlerRank</key>
-            <string>None</string>
-            <key>CFBundleTypeRole</key>
-            <string>None</string>
-            <key>CFBundleTypeExtensions</key>
-            <array>
-                <string>mdb</string>
-                <string>gdb</string>
-                <string>sde</string>
-            </array>
-        </dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Aeronav FAA</string>
+			<key>NSIsRelatedItemType</key>
+			<true/>
+			<key>LSHandlerRank</key>
+			<string>None</string>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>dat</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Aeronav FAA</string>
+			<key>NSIsRelatedItemType</key>
+			<true/>
+			<key>LSHandlerRank</key>
+			<string>None</string>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>dat</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>GeoDatabase</string>
+			<key>NSIsRelatedItemType</key>
+			<true/>
+			<key>LSHandlerRank</key>
+			<string>None</string>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mdb</string>
+				<string>gdb</string>
+				<string>sde</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
